@@ -40,11 +40,11 @@ function writeQuestion($file, $question, $responses, $numOk) {
 
     foreach ($responses as $response) {
         if ($numOk > 1) {
-            $line = str_replace('- [ ] ', $percent, $response);
-            $line = str_replace('~%', '~%-', $line);
-            if (strpos($line, '- [x] ') !== FALSE) {
-                $line = str_replace('- [x] ', $percent, $response);
-            }
+            $line = str_replace('- [ ] ', '~%-100%', $response);
+            //$line = str_replace('~%', '~%-', $line);
+            //if (strpos($line, '- [x] ') !== FALSE) {
+            $line = str_replace('- [x] ', $percent, $line);
+            //}
         } else {
             $line = str_replace('- [ ] ', '~', $response);
             if (strpos($line, '- [x] ') !== FALSE) {
